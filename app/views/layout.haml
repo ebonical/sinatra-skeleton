@@ -1,0 +1,25 @@
+!!! 5
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7]    <html class="no-js lt-ie9 lt-ie8" lang="en">
+/[if IE 8]    <html class="no-js lt-ie9" lang="en">
+/[if gt IE 8] <!--> <html class="no-js" lang="en"> <!--
+%head
+  %meta{ charset:'utf-8' }
+  %meta{ 'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1' }
+
+  %title Sinatra Skeleton
+  %meta{ name: 'description', content: '' }
+  %meta{ name: 'author', content: '' }
+  %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
+  = stylesheet_tag "application", expand: !production?
+
+%body
+  = partial "shared/chromeframe"
+
+  .container.content
+    = yield
+
+  %script{ src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", type: "text/javascript", charset: "utf-8" }
+  = javascript_tag "application", expand: !production?
+  = yield_content(:foot)
+</html>
